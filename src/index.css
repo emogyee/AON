@@ -1,0 +1,12 @@
+.nav-link {
+    color : white;
+    text-transform: uppercase;
+    
+}
+
+.nav-link:hover{
+    color:#EEB73A;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
