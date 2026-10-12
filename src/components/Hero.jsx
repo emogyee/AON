@@ -1,15 +1,20 @@
-import React from 'react'
-import blackman from "../assets/black2.jpg"
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
-const Hero = () => {
+function Hero() {
   return (
-    <div>
-      <img src={blackman} alt="Black Man" width="250px" />
-      
-      <img src="/image/black4.jpg" alt="Black Woman" width="250px" />
-      Hero
-    </div>
-  )
+    <Carousel slide={false}>
+      <Carousel.Item>
+        <img src="/slide/slide-001.png" alt="" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src="/slide/slide_next.jpg.jpeg" alt="" />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img src="/slide/slide-new.jpg.jpeg" alt="" />
+      </Carousel.Item>
+    </Carousel>
+  );
 }
 
-export default Hero
+export default Hero;

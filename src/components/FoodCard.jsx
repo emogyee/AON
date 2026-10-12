@@ -1,3 +1,6 @@
+import React from "react";
+import '../data/food'
+
 function FoodCard({ food }) {     
     return (
       <div className="food-card">
