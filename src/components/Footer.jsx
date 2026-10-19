@@ -10,7 +10,7 @@ import { IoLocationSharp } from "react-icons/io5";
 function Footer() {
   return (
     <Container fluid className="bg-dark text-white p-5 footer">
-      <Row className='gap-5'>
+      <Row className="gap-5">
         <Col>
           <img src="/aon-cuisine.png" alt="" width="100" height="auto" />
           <p>
@@ -24,10 +24,20 @@ function Footer() {
 
         <Col>
           <h5>Quicklink</h5>
-          <li>Home</li>
-          <li>Our menu</li>
-          <li>About us</li>
-          <li>Contact</li>
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="/menu">
+            <li>Our menu</li>
+          </a>
+
+          <a href="/about">
+            <li>About us</li>
+          </a>
+
+          <a href="/contact">
+            <li>Contact</li>
+          </a>
         </Col>
         <Col>
           <h5>Contact us</h5>
@@ -48,7 +58,7 @@ function Footer() {
       <hr />
       <Row>
         <Col>
-          <p className="text-center">&copy; 2023 AON. All rights reserved.</p>
+          <p className="text-center">&copy; 2026 AON. All rights reserved.</p>
         </Col>
       </Row>
     </Container>

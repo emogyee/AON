@@ -1,18 +1,22 @@
 import React from "react";
 import FoodCard from "../components/FoodCard";
-import { foods } from "../data/food";
+import  foods  from "../data/food";
+import PageBanner from "../components/PageBanner";
+import SearchBar from "../components/menupage/SearchBar";
+import PopularDishes from "../components/menupage/PopularDishes";
 
 const Menu = () => {
   return (
-    <section className="menu-page">
-      <h2>Our Menu</h2>
-      <div className="food-grid">
-        {foods.map((food) => (
-          <FoodCard key={food.id} food={food} />
-        ))}
-      </div>
+    <div style={{ backgroundColor: "white" }}>
+      <PageBanner
+        title="Our menu"
+        breadcrumb="Home / Menu"
+        image="https://tse2.mm.bing.net/th/id/OIP.DIwQjvF25-U0j4pLnGGd4gHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      />
+      <SearchBar />
       
-    </section>
+      <PopularDishes />
+    </div>
   );
 };
 

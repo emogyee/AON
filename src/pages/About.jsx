@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import PageBanner from "../components/PageBanner";
 
 const About = () => {
   return (
     <div>
-      About
-
+      <PageBanner title="About us" breadcrumb="Home / About us" image=''/>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
