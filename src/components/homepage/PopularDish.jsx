@@ -10,11 +10,13 @@ const PopularDish = () => {
 const popularFoods = food.slice(0,6)
 
   return (
-    <Container fluid>
+    <Container fluid className='all-in1' 
+      
+    >
       <Row>
         <Col sm={3}>Banner</Col>
         <Col sm={9}>
-          <section>
+          <section className='title'>
             <h6>OUR SPECIALS</h6>
             <h2>Popular Dishes</h2>
             <p>Fresh ingredients.Authentic taste.Always</p>

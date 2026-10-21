@@ -19,7 +19,7 @@ function Hero() {
       <Carousel.Item>
         <img src="/slides/slide2.jpeg" alt="" />
         <Carousel.Caption className="second-slide">
-          <h3>JUICY GRILLED CHICKEN</h3>
+          <h3 >JUICY GRILLED CHICKEN</h3>
           <p>
             Juicy Grilled Chicken, Always a Good Idea Tender, well-seasoned and
             grilled to perfection. Simple, delicious, satisfying.

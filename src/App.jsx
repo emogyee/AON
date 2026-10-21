@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import './service.css';
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -8,6 +9,7 @@ import Cart from "./pages/Cart";
 import NavBar from "./components/navBar";
 import Footer from "./components/Footer";
 import Menu from "./pages/Menu";
+import Services from "./pages/Services";
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -104,6 +106,7 @@ const App = () => {
           <Route path="/" element={<Home onAddToCart={addCart} />} />
           <Route path="/menu" element={<Menu onAddToCart={addCart} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route
             path="/cart"

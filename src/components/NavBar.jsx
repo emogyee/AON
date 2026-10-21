@@ -1,12 +1,10 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { FaShoppingCart } from "react-icons/fa";
-
-
 
 function NavbarMenu() {
   return (
@@ -26,20 +24,16 @@ function NavbarMenu() {
             <Nav.Link href="/">Home</Nav.Link>
 
             <NavDropdown title="Menu" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Local Dishes
-              </NavDropdown.Item> 
+              <NavDropdown.Item href="/menu">Local Dishes</NavDropdown.Item>
 
-              <NavDropdown.Item href="#action/3.3">
-                Foreign Cuisine
-              </NavDropdown.Item>
+              <NavDropdown.Item href="/menu">Foreign Cuisine</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Dessert</NavDropdown.Item>
+              <NavDropdown.Item href="/menu">Dessert</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/cart">
-              <FaShoppingCart /> Cart 
+              <FaShoppingCart /> Cart
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
