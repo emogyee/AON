@@ -1,3 +1,8 @@
+*{
+ font-family: Arial, Helvetica, sans-serif; 
+}
+
+
 .nav-link{
     color: white;
     text-transform: uppercase;
@@ -8,7 +13,11 @@
     color: #F58D1D;
 }
 
-
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: #F58D1D;
+}
 .navbar-collapse {
     flex-grow: 0;
 
