@@ -1,130 +1,93 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import './service.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
+import Services from "./pages/Services";
+import Menu from "./pages/Menu";
+// import Terms from "./pages/Terms";
+import NavbarMenu from "./components/NavBar"; // Ensure this filename matches your components folder!
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Cart from "./pages/Cart";
-import NavBar from "./components/navBar";
-import Footer from "./components/Footer";
-import Menu from "./pages/Menu";
-import Services from "./pages/Services";
+import Checkout from "./pages/Checkout";
+// import OrderSuccess from "./pages/OrderSuccess";
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]);
+  // Optional: Load cart from localStorage so items don't reset on page refresh
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("cartItems");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
-  function addCart(food) {
-    let newCart = [];
-    let foodFound = false;
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
-    for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].id === food.id) {
-        let updateFood = {
-          id: cartItems[i].id,
-          name: cartItems[i].name,
-          price: cartItems[i].price,
-          image: cartItems[i].image,
-          description: cartItems[i].description,
-          quantity: cartItems[i].quantity + 1,
-        };
-
-        newCart.push(updateFood);
-        foodFound = true;
+  // Add item or increment quantity if it already exists (using functional update)
+  function addToCart(food) {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === food.id);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === food.id ? { ...item, quantity: item.quantity + 1 } : item,
+        );
       } else {
-        newCart.push(cartItems[i]);
+        return [...prevItems, { ...food, quantity: 1 }];
       }
-    }
-
-    if (foodFound === false) {
-      let newFood = {
-        id: food.id,
-        name: food.name,
-        price: food.price,
-        image: food.image,
-        description: food.description,
-        quantity: 1,
-      };
-      newCart.push(newFood);
-    }
-
-    setCartItems(newCart);
+    });
   }
 
+  // Increase item quantity
   function increaseQuantity(id) {
-    let newCart = [];
-
-    for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].id === id) {
-        let updatedFood = {
-          id: cartItems[i].id,
-          name: cartItems[i].name,
-          price: cartItems[i].price,
-          image: cartItems[i].image,
-          description: cartItems[i].description,
-          quantity: cartItems[i].quantity + 1,
-        };
-        newCart.push(updatedFood);
-      } else {
-        newCart.push(cartItems[i]);
-      }
-      setCartItems(newCart);
-    }
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
+    );
   }
+
+  // Decrease item quantity (removes item completely if quantity drops below 1)
   function decreaseQuantity(id) {
-    let newCart = [];
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item,
+        )
+        .filter((item) => item.quantity > 0),
+    );
+  }
 
-    for (let i = 0; i < cartItems.length; i++) {
-      if (cartItems[i].id === id) {
-        if (cartItems[i].quantity > 1) {
-          let updatedFood = {
-            id: cartItems[i].id,
-            name: cartItems[i].name,
-            price: cartItems[i].price,
-            image: cartItems[i].image,
-            description: cartItems[i].description,
-            quantity: cartItems[i].quantity - 1,
-          };
-          newCart.push(updatedFood);
-        } else {
-          newCart.push(cartItems[i]);
-        }
-      }
-      setCartItems(newCart);
-    }
-  }
-  let cartCount = 0;
-  for (let i = 0; i < cartItems.length; i++) {
-    cartCount = cartCount + cartItems[i].quantity;
-  }
+  // Calculate total cart count for the navbar badge
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home onAddToCart={addCart} />} />
-          <Route path="/menu" element={<Menu onAddToCart={addCart} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                cartItems={cartItems}
-                oinsreaseQuantity
-                ondecrease={decreaseQuantity}
-                onAddToCart={addCart}
-              />
-            }
-          />
-          
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <NavbarMenu cartCount={cartCount} sticky="top" />
+      <Routes>
+        <Route path="/" element={<Home onAddToCart={addToCart} />} />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              onIncrease={increaseQuantity}
+              onDecrease={decreaseQuantity}
+              onAddToCart={addToCart}
+            />
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/service" element={<Services />} />
+        <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
+        {/* <Route path="/terms" element={<Terms />} /> */}
+        {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
+        <Route path="/menu" element={<Menu onAddToCart={addToCart} />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 };
- 
+
 export default App;

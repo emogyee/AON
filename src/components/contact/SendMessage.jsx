@@ -63,7 +63,7 @@ const SendMessage = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31518.337090353503!2d7.460832539550774!3d9.082692000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b00161ba005%3A0x2302708c59569c93!2sCalabar%20Aroma%20Abuja%20Restaurant!5e0!3m2!1sen!2sng!4v1792278666895!5m2!1sen!2sng"
               width={600}
               height={350}
-              style={{ border: 0, marginRight:"30px",marginTop:"-7px" }}
+              style={{ border: 0, marginRight:"30px",marginTop:"-1px" }}
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>

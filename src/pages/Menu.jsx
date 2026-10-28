@@ -5,7 +5,7 @@ import PageBanner from "../components/PageBanner";
 import SearchBar from "../components/menupage/SearchBar";
 import PopularDishes from "../components/menupage/PopularDishes";
 
-const Menu = () => {
+const Menu = ({addToCart}) => {
   return (
     <div style={{ backgroundColor: "white" }}>
       <PageBanner
@@ -16,7 +16,7 @@ const Menu = () => {
       
       <SearchBar />
       
-      <PopularDishes />
+      <PopularDishes onAddToCart={addToCart}/>
     </div>
   );
 };

@@ -41,17 +41,17 @@ function Footer() {
         </Col>
         <Col>
           <h5>Contact us</h5>
-          <h6 class="contact_info">
+          <h6 className="contact_info">
             <FaPhone />
-            <span class="footer_contact_info"> +234 801 234 5678</span>
+            <span className="footer_contact_info"> +234 801 234 5678</span>
           </h6>
-          <h6 class="contact_info">
+          <h6 className="contact_info">
             <MdEmail />
-            <span class="footer_contact_info"> hello@wonderland.com</span>
+            <span className="footer_contact_info"> hello@AON.com</span>
           </h6>
-          <h6 class="contact_info">
+          <h6 className="contact_info">
             <WiTime4 />
-            <span class="footer_contact_info"> 9 AM – 10 PM</span>
+            <span className="footer_contact_info"> 9 AM – 10 PM</span>
           </h6>
         </Col>
       </Row>

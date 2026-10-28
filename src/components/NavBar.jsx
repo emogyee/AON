@@ -6,9 +6,9 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { FaShoppingCart } from "react-icons/fa";
 
-function NavbarMenu() {
+function NavbarMenu({cartCount}) {
   return (
-    <Navbar expand="lg" className="bg-black">
+    <Navbar expand="lg" className="bg-black" sticky="top">
       <Container>
         <Navbar.Brand href="/">
           <img
@@ -33,7 +33,7 @@ function NavbarMenu() {
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/cart">
-              <FaShoppingCart /> Cart
+              <FaShoppingCart /> Cart <span className="badge bg-danger">({cartCount})</span>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
