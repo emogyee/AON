@@ -43,7 +43,7 @@ function Footer() {
           <h5>Contact us</h5>
           <h6 className="contact_info">
             <FaPhone />
-            <span className="footer_contact_info"> +234 801 234 5678</span>
+            <span className= "footer_contact_info"> +234 801 234 5678</span>
           </h6>
           <h6 className="contact_info">
             <MdEmail />
