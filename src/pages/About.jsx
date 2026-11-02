@@ -1,9 +1,9 @@
 import React from "react";
 import PageBanner from "../components/PageBanner";
-import OurStory from "../components/About/OurStory";
-import OurValue from "../components/About/OurValue";
-import WhyChoseUs from "../components/About/WhyChoseUs";
-import MeetOurTeam from "../components/About/MeetOurTeam";
+import OurStory from "../components/about/OurStory";
+import OurValue from "../components/about/OurValue";
+import WhyChoseUs from "../components/about/WhyChoseUs";
+import MeetOurTeam from "../components/about/MeetOurTeam";
 
 const About = () => {
   return (
