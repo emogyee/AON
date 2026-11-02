@@ -13,7 +13,7 @@ import About from "./pages/About";
 import Checkout from "./pages/Checkout";
 import Refund from "./pages/Refund";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import FAQs from "./pages/FAQs";
+import FAQs from "./pages/Faqs";
 import Delivery from "./pages/Delivery";
 import Offers from "./pages/Offers";
 
