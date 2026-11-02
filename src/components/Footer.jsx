@@ -40,6 +40,29 @@ function Footer() {
           </a>
         </Col>
         <Col>
+          <h5>Information</h5>
+          <a href="/terms">
+            <li>Terms and conditions</li>
+          </a>
+          <a href="/privacy-policy">
+            <li>Privacy policy</li>
+          </a>
+
+          <a href="/faqs">
+            <li>FAQs</li>
+          </a>
+
+          <a href="/refund">
+            <li>Refund and Councellation Policy</li>
+          </a>
+          <a href="/delievery">
+            <li>Delievery Policy</li>
+          </a>
+          <a href="/offer">
+            <li>Offers and Promotion</li>
+          </a>
+        </Col>
+        <Col>
           <h5>Contact us</h5>
           <h6 className="contact_info">
             <FaPhone />

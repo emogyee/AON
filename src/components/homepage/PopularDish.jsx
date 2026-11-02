@@ -14,7 +14,7 @@ const popularFoods = food.slice(0,6)
       
     >
       <Row className='p-5'>
-        <Col sm={3}><img src="public/image/homebanner (1).png" alt="" width='100%' /></Col>
+        <Col sm={3}><img src="/image/homebanner (1).png" alt="" width='100%' /></Col>
         <Col sm={9}>
           <section className='title'>
             <h6>OUR SPECIALS</h6>

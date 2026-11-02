@@ -6,11 +6,17 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Menu from "./pages/Menu";
-// import Terms from "./pages/Terms";
+import Terms from "./pages/Terms";
 import NavbarMenu from "./components/NavBar"; // Ensure this filename matches your components folder!
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Checkout from "./pages/Checkout";
+import Refund from "./pages/Refund";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import FAQs from "./pages/FAQs";
+import Delivery from "./pages/Delivery";
+import Offers from "./pages/Offers";
+
 // import OrderSuccess from "./pages/OrderSuccess";
 
 const App = () => {
@@ -81,7 +87,15 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/service" element={<Services />} />
         <Route path="/checkout" element={<Checkout cartItems={cartItems} />} />
-        {/* <Route path="/terms" element={<Terms />} /> */}
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund" element={<Refund />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/delievery" element={<Delivery />} />
+        <Route path="/offer" element={<Offers />} />
+
+        <Route path="/" element={<Menu onAddToCart={addToCart} />} />
+
         {/* <Route path="/order-success" element={<OrderSuccess />} /> */}
         <Route path="/menu" element={<Menu onAddToCart={addToCart} />} />
       </Routes>

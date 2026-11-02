@@ -8,7 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 function NavbarMenu({cartCount}) {
   return (
-    <Navbar expand="lg" className="bg-black" sticky="top">
+    <Navbar expand="lg" className="bg-black" sticky="top" style={{zIndex:1030}}>
       <Container>
         <Navbar.Brand href="/">
           <img
